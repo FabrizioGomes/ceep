@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import "./estilo.css";
 class FormularioCadastro extends Component {
@@ -8,6 +7,7 @@ class FormularioCadastro extends Component {
     this.titulo ="";
     this.texto ="";
   }
+
   _handleMudancaTitulo(evento){
     evento.stopPropagation();
     this.titulo = evento.target.value;
@@ -17,10 +17,12 @@ class FormularioCadastro extends Component {
     evento.stopPropagation();
     this.texto = evento.target.value;
   }
+
   _criarNota(evento){
     evento.preventDefault();
     evento.stopPropagation();
     this.props.criarNota(this.titulo, this.texto);
+    
   }
 
   render() {
@@ -32,7 +34,7 @@ class FormularioCadastro extends Component {
           type="text"
           placeholder="Título"
           className="form-cadastro_input"
-          onChange = {this._handleMudancaTitulo.bind(this)}
+          onChange={this._handleMudancaTitulo.bind(this)}
         />
         <textarea
           rows={15}
